@@ -1,4 +1,26 @@
-# consider a dictionary of grocery items with their prices
+grocery_items = {
+    "apple": 1.0,
+    "banana": 0.5,
+    "milk": 3.0,
+    "bread": 2.0,
+}
+cart = {}
+while True:
+    item = input(
+        "Enter an item to buy (or type 'done' to finish): ").strip().lower()
+    if item == "done":
+        break
+    parts = item.split()
+    item_name = parts[0]
+    quantity = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 1
+
+    if item_name in grocery_items:
+        if item_name in cart:
+            cart[item_name] += quantity
+        else:
+            cart[item_name] = quantity
+    else:
+        print("Sorry, we don't have that item.")
 # Continuosly ask the user to input what they want to buy, and stop when they type "done"
 # If the item is in the dictionary, add it to a list of items to buy
 # If the item is not in the dictionary, print a message saying "Sorry, we don't have that item."
