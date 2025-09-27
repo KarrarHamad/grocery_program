@@ -28,13 +28,15 @@ for item, quantity in cart.items():
     total_cost += item_cost
     if item == "milk" and quantity >= 2:
         total_cost -= 1  # Apply $1 discount
-if total_cost > 10:
-    print("You spent a lot!")
-else:
-    print("You spent a little!")
+
 # Print the final list of items and the total cost.
 print("Final list of items:")
 for item, quantity in cart.items():
     print(
         f"{item}: {quantity} x ${grocery_items[item]} = ${grocery_items[item] * quantity}")
 print(f"Total cost: ${total_cost}")
+
+if total_cost > 10:
+    print("You spent a lot!")
+else:
+    print("You spent a little!")
