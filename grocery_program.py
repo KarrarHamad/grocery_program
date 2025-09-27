@@ -5,15 +5,16 @@ grocery_items = {
     "bread": 2.0,
 }
 cart = {}
+# Main loop to take user input
 while True:
     item = input(
-        "What do you want to buy?:").strip().lower()
+        "What do you want to buy?:").strip()
     if item == "done":
         break
     parts = item.split()
     item_name = parts[0]
     quantity = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 1
-
+# Add item to cart
     if item_name in grocery_items:
         if item_name in cart:
             cart[item_name] += quantity
